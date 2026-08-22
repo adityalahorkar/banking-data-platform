@@ -1,0 +1,10 @@
+pandas==2.2.2
+numpy==1.26.4
+sqlalchemy==2.0.30
+psycopg2-binary==2.9.9
+pyspark==3.5.1
+python-dotenv==1.0.1
+pytest==8.2.0
+
+# apache-airflow is intentionally not listed here -- it's optional and
+# needs its own install command with a constraints file (see README.md).

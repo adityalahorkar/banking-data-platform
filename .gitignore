@@ -1,0 +1,37 @@
+# Environments
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Data (not versioned)
+data/raw/*.csv
+data/processed/*.csv
+data/reports/*.csv
+*.log
+*.tmp
+
+# Large binaries
+jars/*.jar
+*.pbix
+
+# Airflow runtime files
+airflow/logs/
+airflow/airflow.db
+airflow/airflow.cfg
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
