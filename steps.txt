@@ -1,0 +1,53 @@
+python --version
+java -version
+psql --version or py -0
+git --version
+git config --global user.name "Aditya Lahorkar"
+git config --global user.email "adityaalahorkar@gmail.com"
+py -3.11 -m venv venv
+venv\Scripts\activate
+pip install --upgrade pip
+pip install -r requirements.txt
+copy .env.example .env
+DB_PASSWORD=changepass
+Invoke-WebRequest -Uri "https://jdbc.postgresql.org/download/postgresql-42.7.3.jar" -OutFile "jars/postgresql-42.7.3.jar"
+copy your transactions.csv file into the data\raw\ folder, so the final path is: banking-data-platform\data\raw\transactions.csv
+python run_pipeline.py
+python -c "from pipeline.db import get_engine; import pandas as pd; print(pd.read_sql('SELECT * FROM analytics.executive_summary', get_engine()))"
+python -c "from pipeline.db import get_engine; import pandas as pd; print(pd.read_sql('SELECT * FROM analytics.fraud_summary', get_engine()))"
+
+git init
+git init
+git branch -M main
+git remote add origin https://github.com/adityalahorkar/banking-data-platform.git
+
+git add README.md .gitignore LICENSE requirements.txt .env.example settings.py
+git commit -m "Initial setup: project structure, config, dependencies"
+
+git add sql/
+git commit -m "Add database schema and analytics view definitions"
+
+git add pipeline/
+git commit -m "Add pipeline scripts: ingestion, transformation, warehouse build"
+
+git add run_pipeline.py
+git commit -m "Add single entrypoint to run the full pipeline"
+
+git add tests/
+git commit -m "Add tests for database connection and Spark session"
+
+git add docs/
+git commit -m "Add architecture and data dictionary documentation"
+
+git add airflow/
+git commit -m "Add optional Airflow DAG for scheduled orchestration"
+
+git add jars/README.md
+git commit -m "Add JDBC driver download instructions"
+
+git add data/
+git commit -m "Preserve data folder structure"
+
+
+
+git push -u origin main
