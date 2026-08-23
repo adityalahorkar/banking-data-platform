@@ -2,46 +2,27 @@
 
 An end-to-end data pipeline that loads a banking transactions dataset into PostgreSQL, transforms it with PySpark, models it into a star schema, and powers a Power BI dashboard. Processes 6.3M+ transaction rows.
 
+## Architecture Diadram
+
 <p align="center">
   <img src="docs/images/architecture_diagram.png" alt="Architecture" width="380">
 </p>
 
-## Architecture
-
-```
-Kaggle Dataset
-      |
-      v
-PostgreSQL (Raw)
-      |
-      v
-PySpark Transform
-      |
-      v
-PostgreSQL (Warehouse)
-      |
-      v
-Analytics Views
-      |
-      v
-Power BI Dashboard
-```
-
 ## Tech stack
 
-Python · PostgreSQL · PySpark · Apache Airflow (optional) · Power BI · pytest
+Python · PostgreSQL · PySpark · Apache Airflow (optional) · Power BI (optional)
 
 ## Project structure
 
 ```
 ├── settings.py          # config, loaded from .env
-├── run_pipeline.py       # runs the full pipeline
-├── pipeline/              # one file per step
-├── sql/                    # schema + analytics views
-├── airflow/                 # optional scheduled orchestration
-├── docs/                     # architecture & data dictionary
-├── tests/                     # pytest tests
-└── data/                        # raw / processed / reports
+├── run_pipeline.py      # runs the full pipeline
+├── pipeline/            # one file per step
+├── sql/                 # schema + analytics views
+├── airflow/             # optional scheduled orchestration
+├── docs/                # architecture & data dictionary
+├── tests/               # pytest tests
+└── data/                # raw / processed / reports
 ```
 
 ## Setup
