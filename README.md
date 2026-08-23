@@ -2,7 +2,7 @@
 
 An end-to-end data pipeline that loads a banking transactions dataset into PostgreSQL, transforms it with PySpark, models it into a star schema, and powers a Power BI dashboard. Processes 6.3M+ transaction rows.
 
-## Architecture Diadram
+## Architecture Diagram
 
 <p align="center">
   <img src="docs/images/architecture_diagram.png" alt="Architecture" width="380">
